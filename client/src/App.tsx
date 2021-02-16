@@ -8,6 +8,7 @@ import { setContext } from 'apollo-link-context';
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Authenticated from "./components/Authenticated";
+import Rooms from "./pages/Rooms";
 
 const httpLink = new HttpLink({ uri: "http://localhost:4000" })
 const authLink = setContext(async (req, { headers }) => {
@@ -44,6 +45,9 @@ function App() {
           <Authenticated>
             <Route path="/users">
               <Users/>
+            </Route>
+            <Route path="/rooms">
+              <Rooms/>
             </Route>
           </Authenticated>
         </Switch>
